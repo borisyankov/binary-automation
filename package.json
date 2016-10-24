@@ -1,0 +1,32 @@
+{
+  "name": "binary-automation",
+  "version": "0.0.1",
+  "main": "index.js",
+  "scripts": {
+    "build": "gulp",
+    "prepublish": "npm run build",
+    "test": "jest",
+    "test:coverage": "jest --coverage",
+    "test:coveralls": "npm run test:coverage && cat ./coverage/lcov.info | ./node_modules/coveralls/bin/coveralls.js && rm -rf ./coverage",
+    "test:eslint": "eslint src/**/*.js",
+    "test:flow": "flow check --all --show-all-errors",
+    "test:watch": "jest --watch",
+    "test:full": "npm run test:eslint && npm run test:flow && npm run test:coveralls"
+  },
+  "repository": {
+    "url": "https://github.com/borisyankov/binary-automation",
+    "type": "git"
+  },
+  "author": "Boris Yankov <borisyankov@gmail.com>",
+  "license": "MIT",
+  "dependencies": {
+    "babel-cli": "^6.16.0",
+    "binary-live-api": "^27.0.0",
+    "coveralls": "^2.11.14",
+    "eslint": "^3.8.1",
+    "eslint-config-airbnb": "^12.0.0",
+    "gulp": "^3.9.1",
+    "gulp-babel": "^6.1.2",
+    "jest-cli": "^16.0.2"
+  }
+}
