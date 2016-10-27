@@ -7,7 +7,7 @@ binary
     duration: '5t',
     payout: 'stake',
   })
-  .buyWhen({
-
+  .when({
+    'open': ''
   })
   repeat();
