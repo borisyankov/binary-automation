@@ -1,11 +1,12 @@
 {
   "name": "binary-automation",
-  "version": "0.0.2",
+  "version": "0.0.3",
   "main": "index.js",
   "scripts": {
     "build": "gulp",
     "prepublish": "npm run build",
     "test": "jest",
+    "demo": "babel-node demos/hello-world.js --presets latest,stage-0",
     "test:coverage": "jest --coverage",
     "test:coveralls": "npm run test:coverage && cat ./coverage/lcov.info | ./node_modules/coveralls/bin/coveralls.js && rm -rf ./coverage",
     "test:eslint": "eslint src/**/*.js",
@@ -20,14 +21,15 @@
   "author": "Boris Yankov <borisyankov@gmail.com>",
   "license": "MIT",
   "dependencies": {
-    "babel-plugin-transform-flow-strip-types": "^6.18.0",
-    "babel-preset-latest": "^6.16.0",
+    "babel-preset-stage-0": "^6.16.0",
     "binary-indicators": "^1.2.1",
-    "binary-live-api": "^27.0.0",
+    "binary-live-api": "^28.0.0",
     "binary-utils": "^4.21.0"
   },
   "devDependencies": {
     "babel-cli": "^6.16.0",
+    "babel-plugin-transform-flow-strip-types": "^6.18.0",
+    "babel-preset-latest": "^6.16.0",
     "coveralls": "^2.11.14",
     "eslint": "^3.8.1",
     "eslint-config-airbnb": "^12.0.0",

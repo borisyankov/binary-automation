@@ -1,3 +1,3 @@
-import binary from 'binary-automation';
+import binary from '../src';
 
 binary.getLastTick('R100').print();
